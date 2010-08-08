@@ -12,6 +12,7 @@ Enviroment-based configuration for Clojure projects.
 3. Create a habitat directory in your resources directory.
 4. Create a default.clj in your resources/habitat directory:
 
+
     ;; Example default.clj
     {:my-config-item "hello world from default"}
 
