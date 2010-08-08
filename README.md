@@ -11,24 +11,25 @@ Enviroment-based configuration for Clojure projects.
 2. Add habitat to your project management file (project.clj / pom.xml / whatever).
 3. Create a habitat directory in your resources directory.
 4. Create a default.clj in your resources/habitat directory:
-    ;; Example default.clj
-    {:my-config-item "hello world from default"}
+        ;; Example default.clj
+        {:my-config-item "hello world from default"}
+
 5. Create a dev.clj in your resources/habitat directory:
-    ;; dev.clj
-    {:my-config-item :hello-world-from-dev}
+        ;; dev.clj
+        {:my-config-item :hello-world-from-dev}
 6. Start a repl and run:
-    user=> (require 'habitat)
-    user=> (habitat/habitat)   ;defaults to :dev enviroment
-    {:my-config-item :hello-world-from-dev}
+        user=> (require 'habitat)
+        user=> (habitat/habitat)   ;defaults to :dev enviroment
+        {:my-config-item :hello-world-from-dev}
 
 7. To set the enviroment at runtime:
-    ;; other-env.clj
-	{:my-config-item :other-env}
+        ;; other-env.clj
+        {:my-config-item :other-env}
 	
-	% export JAVA_OPTS="-Dhabitat.env=other-env"; lein repl
-	user=> (require 'habitat)
-	user=> (habitat/habitat)
-	{:my-config-item :other-env}
+        % export JAVA_OPTS="-Dhabitat.env=other-env"; lein repl
+        user=> (require 'habitat)
+        user=> (habitat/habitat)
+        {:my-config-item :other-env}
 
 ## License
 
