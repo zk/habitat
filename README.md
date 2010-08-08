@@ -1,6 +1,8 @@
 # habitat
 
-Enviroment-based configuration for Clojure projects.
+Enviroment-based configuration for Clojure projects. 
+
+Requires Clojure 1.2.
 
 ## Leiningen
     [habitat "0.1.0-SNAPSHOT"]
@@ -17,7 +19,7 @@ Enviroment-based configuration for Clojure projects.
 5. Create a dev.clj in your resources/habitat directory:
         ;; dev.clj
         {:my-config-item :hello-world-from-dev}
-6. Start a repl and run:
+6. Update your dependencies, start a repl and run:
         user=> (require 'habitat)
         user=> (habitat/habitat)   ;defaults to :dev enviroment
         {:my-config-item :hello-world-from-dev}
@@ -30,6 +32,9 @@ Enviroment-based configuration for Clojure projects.
         user=> (require 'habitat)
         user=> (habitat/habitat)
         {:my-config-item :other-env}
+
+8. You can also pass a keyword to habitat to manually set the environment:
+        user=> (habitat/habitat :other-env)
 
 ## License
 
